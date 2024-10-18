@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+% For Chinese characters
+\usepackage{fontspec}
+\setmainfont{SimSun}
+
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+% Page layout
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+% Title
+\title{Lorem Ipsum}
+\author{John Doe}
+\date{\today}
+
+\makeatletter
+\let\theauthor\@author
+\let\thedate\@date
+\let\thetitle\@title
+\makeatother
+
+% If you want the settings apply to the first page, use plain style, otherwise comment it.
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[L]{\thedate}
+    \fancyhead[L]{Description of the document}
+    \fancyhead[R]{\theauthor}
+}
+
+% The settings apply to the rest of the pages.
+\fancypagestyle{fancy}{
+    \fancyhf{}
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{\theauthor}
+    \fancyfoot[L]{\thedate}
+    \fancyfoot[R]{\thepage}
+}
+
+\pagestyle{fancy}
+
+% Document
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{5cm}
+        {\LARGE \textbf{\thetitle}} \\[1.5cm]
+        {\large \theauthor} \\[0.5cm]
+        {\large \thedate} \\[3cm]
+
+        % If you want to add a logo, use the following code.
+        \includegraphics[width=0.2\linewidth]{pic/SDU.eps}
+        
+        \vfill
+
+        % \textit{A subtitle or additional information if needed} % Optional subtitle or info
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Write your introduction here.
+
+\section{Main Content}
+\subsection{Subsection 1}
+Write your first subsection here.
+
+\subsection{Subsection 2}
+Write your second subsection here.
+
+\section{Conclusion}
+Write your conclusion here.
+
+\end{document}
